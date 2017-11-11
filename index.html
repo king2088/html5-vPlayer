@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vPlayer</title>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+    <div id="vPlayer">
+        <video id="playerContent" preload="auto">
+            <source src="http://media.w3.org/2010/05/sintel/trailer.webm" type='video/webm;codecs="vp8, vorbis"'/>
+            <source src="http://media.w3.org/2010/05/bunny/trailer.mp4" type='video/mp4;codecs="avc1.42E01E, mp4a.40.2"'/>
+        </video>
+        <div id="playerControler">
+            <div class="playButtonWrap">
+                <div id="play" class="playButton"></div>
+                <div id="pause" class="pauseButton"></div>
+            </div>
+        </div>
+        <div id="progressBar">
+            <div class="reloadProgress">
+                <div class="progress"></div>
+            </div>
+
+        </div>
+    </div>
+    <script src="js/man.js"></script>
+</body>
+</html>

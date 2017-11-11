@@ -1,0 +1,106 @@
+body{
+  background violet
+}
+*,html,body,video{
+  margin 0
+  padding 0
+  #vPlayer{
+    width 100%
+    position relative
+    overflow hidden
+    background #000
+  }
+  #playerContent{
+    width 100%
+    background #000
+  }
+  #playerControler{
+    width 100%
+    background #333
+    z-index 99999999
+    position absolute
+    bottom 5px
+    left 0
+    padding 4px 0
+    opacity 1
+    .playButtonWrap{
+      width 24px
+      height 24px
+      border-radius 14px
+      border 2px #CCC solid
+      margin-left 8px
+      .playButton{
+        margin 4px 0 0 8px
+        width 0
+        height 0
+        border-bottom 8px solid transparent
+        border-top 8px solid transparent
+        border-left 10px solid #CCC
+        //display none
+      }
+      .pauseButton{
+        margin 6px 0 0 8px
+        width 5px
+        height 12px
+        border-left 2px #CCC solid
+        border-right 2px #CCC solid
+        display none
+      }
+    }
+  }
+  #progressBar{
+    width 100%
+    background #333
+    height 2px
+    position absolute
+    bottom 0
+    display block
+    border-bottom 3px #AAA solid
+    .reloadProgress{
+      width 0
+      height 2px
+      background #CCC
+      position relative
+      left 0
+      top 0
+      z-index 999
+      .progress{
+        width 0
+        height 2px
+        background darkcyan
+        position absolute
+        left 0
+        top 0
+        z-index 9999
+      }
+    }
+  }
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  .fadeIn {
+    animation-name: fadeIn;
+  }
+
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+  }
+  .fadeOut {
+    animation-name: fadeOut;
+  }
+
+}
+

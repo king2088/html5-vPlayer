@@ -1,0 +1,183 @@
+body {
+  background: #ee82ee;
+}
+*,
+html,
+body,
+video {
+  margin: 0;
+  padding: 0;
+}
+* #vPlayer,
+html #vPlayer,
+body #vPlayer,
+video #vPlayer {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  background: #000;
+}
+* #playerContent,
+html #playerContent,
+body #playerContent,
+video #playerContent {
+  width: 100%;
+  background: #000;
+}
+* #playerControler,
+html #playerControler,
+body #playerControler,
+video #playerControler {
+  width: 100%;
+  background: #333;
+  z-index: 99999999;
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  padding: 4px 0;
+  opacity: 1;
+}
+* #playerControler .playButtonWrap,
+html #playerControler .playButtonWrap,
+body #playerControler .playButtonWrap,
+video #playerControler .playButtonWrap {
+  width: 24px;
+  height: 24px;
+  border-radius: 14px;
+  border: 2px #ccc solid;
+  margin-left: 8px;
+}
+* #playerControler .playButtonWrap .playButton,
+html #playerControler .playButtonWrap .playButton,
+body #playerControler .playButtonWrap .playButton,
+video #playerControler .playButtonWrap .playButton {
+  margin: 4px 0 0 8px;
+  width: 0;
+  height: 0;
+  border-bottom: 8px solid transparent;
+  border-top: 8px solid transparent;
+  border-left: 10px solid #ccc;
+}
+* #playerControler .playButtonWrap .pauseButton,
+html #playerControler .playButtonWrap .pauseButton,
+body #playerControler .playButtonWrap .pauseButton,
+video #playerControler .playButtonWrap .pauseButton {
+  margin: 6px 0 0 8px;
+  width: 5px;
+  height: 12px;
+  border-left: 2px #ccc solid;
+  border-right: 2px #ccc solid;
+  display: none;
+}
+* #progressBar,
+html #progressBar,
+body #progressBar,
+video #progressBar {
+  width: 100%;
+  background: #333;
+  height: 2px;
+  position: absolute;
+  bottom: 0;
+  display: block;
+  border-bottom: 3px #aaa solid;
+}
+* #progressBar .reloadProgress,
+html #progressBar .reloadProgress,
+body #progressBar .reloadProgress,
+video #progressBar .reloadProgress {
+  width: 0;
+  height: 2px;
+  background: #ccc;
+  position: relative;
+  left: 0;
+  top: 0;
+  z-index: 999;
+}
+* #progressBar .reloadProgress .progress,
+html #progressBar .reloadProgress .progress,
+body #progressBar .reloadProgress .progress,
+video #progressBar .reloadProgress .progress {
+  width: 0;
+  height: 2px;
+  background: #008b8b;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 9999;
+}
+* .fadeIn,
+html .fadeIn,
+body .fadeIn,
+video .fadeIn {
+  animation-name: fadeIn;
+}
+* .fadeOut,
+html .fadeOut,
+body .fadeOut,
+video .fadeOut {
+  animation-name: fadeOut;
+}
+@-moz-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-o-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-moz-keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@-o-keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
