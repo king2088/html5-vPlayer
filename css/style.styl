@@ -58,6 +58,52 @@
       float left
       margin-left 2%
     }
+    .vPlayVolumeWrap{
+      float right
+      margin 6px 10% 0 0
+      width 25%
+      #volumeIcon{
+        width: 0px;
+        height: 0px;
+        padding: 5px 3px;
+        border-width: 5px 10px 5px 0px;
+        border-color: transparent #CCC transparent transparent;
+        border-style: solid;
+        /*喇叭效果*/
+        -webkit-box-shadow: inset 15px 0 #666;
+        -moz-box-shadow: inset 15px 0 #666;
+        box-shadow: inset 15px 0 #666;
+        float left
+      }
+      #vPlayVolume{
+        width: 75%;
+        height: 2px;
+        background: #ccc;
+        position: relative;
+        float left
+        margin 10px 0 0 10px
+        #dragBar{
+          width: 8px;
+          height: 8px;
+          border-radius 4px
+          background: #369;
+          position: absolute;
+          top: -3px;
+          left: 0;
+          cursor: pointer;
+        }
+        #dragMask{
+          position: absolute;
+          left: 0;
+          top: 0;
+          background: #369;
+          width: 0;
+          height: 2px;
+        }
+      }
+    }
+
+
   }
   #progressBar{
     width 100%

@@ -6,6 +6,10 @@ window.onload = function () {
     var pause = document.getElementById('pause')
     var reloadProgressDOM = document.getElementById('progressBar')
     var progressTimeShowDOM = document.getElementById('vplayerTimeLine')
+    var volumeIconDOM = document.getElementById('volumeIcon')
+    var vPlayVolumeDOM = document.getElementById('vPlayVolume')
+    var dragBarDOM = document.getElementById('dragBar')
+    var dragMaskDOM = document.getElementById('dragMask')
     var _playerControlHidden,_playTime
 
     //3000ms hidden player
@@ -16,6 +20,7 @@ window.onload = function () {
     pause.addEventListener('click',vPlayerPause)
     //show player control
     playerContent.addEventListener('mouseover',playerControlShow)
+    playerControl.addEventListener('mouseover',playerControlShow)
     //hidden player control
     playerContent.addEventListener('mouseleave',playerControlHidden)
     function vPlayerPlay() {
@@ -69,8 +74,56 @@ window.onload = function () {
             }
         },0)
 
+    }
+
+
+    //progress drag control
+
+
+    //volume drag control
+    playerContent.volume = 0.5
+    dragMaskDOM.style.width = '50%'
+    dragBarDOM.style.left = '50%'
+
+    dragBarDOM.onmousedown = function (event) {
+        var event = event || window.event;
+        var leftVal = event.clientX - this.offsetLeft;
+        var that = this;
+        // 拖动一定写到 down 里面才可以
+        document.onmousemove = function(event){
+            var event = event || window.event;
+            barleft = event.clientX - leftVal;
+            if(barleft < 0)
+                barleft = 0;
+            else if(barleft > vPlayVolumeDOM.offsetWidth - dragBarDOM.offsetWidth)
+                barleft = vPlayVolumeDOM.offsetWidth - dragBarDOM.offsetWidth;
+            dragMaskDOM.style.width = barleft +'px' ;
+            that.style.left = barleft + 'px';
+            var volumeValue = barleft/(vPlayVolumeDOM.offsetWidth-dragBarDOM.offsetWidth)
+            console.log(volumeValue)
+            playerContent.volume = volumeValue
+            //防止选择内容--当拖动鼠标过快时候，弹起鼠标，bar也会移动，修复bug
+            window.getSelection ? window.getSelection().removeAllRanges() : document.selection.empty();
+        }
+    }
+    document.onmouseup = function(){
+        document.onmousemove = null; //移除事件
+    }
+
+    volumeIconDOM.onclick = function () {
+        if(playerContent.volume != 0){
+            playerContent.volume = 0
+            dragMaskDOM.style.width = '0'
+            dragBarDOM.style.left = '0'
+        }else{
+            playerContent.volume = 0.5
+            dragMaskDOM.style.width = '50%'
+            dragBarDOM.style.left = '50%'
+        }
 
     }
+
+
 
     /**
      * 时间秒数格式化
@@ -95,4 +148,5 @@ window.onload = function () {
         }
         return t;
     }
+
 }

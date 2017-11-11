@@ -86,6 +86,65 @@ video #playerControler #vplayerTimeLine {
   float: left;
   margin-left: 2%;
 }
+* #playerControler .vPlayVolumeWrap,
+html #playerControler .vPlayVolumeWrap,
+body #playerControler .vPlayVolumeWrap,
+video #playerControler .vPlayVolumeWrap {
+  float: right;
+  margin: 6px 10% 0 0;
+  width: 25%;
+}
+* #playerControler .vPlayVolumeWrap #volumeIcon,
+html #playerControler .vPlayVolumeWrap #volumeIcon,
+body #playerControler .vPlayVolumeWrap #volumeIcon,
+video #playerControler .vPlayVolumeWrap #volumeIcon {
+  width: 0px;
+  height: 0px;
+  padding: 5px 3px;
+  border-width: 5px 10px 5px 0px;
+  border-color: transparent #ccc transparent transparent;
+  border-style: solid;
+/*喇叭效果*/
+  -webkit-box-shadow: inset 15px 0 #666;
+  -moz-box-shadow: inset 15px 0 #666;
+  box-shadow: inset 15px 0 #666;
+  float: left;
+}
+* #playerControler .vPlayVolumeWrap #vPlayVolume,
+html #playerControler .vPlayVolumeWrap #vPlayVolume,
+body #playerControler .vPlayVolumeWrap #vPlayVolume,
+video #playerControler .vPlayVolumeWrap #vPlayVolume {
+  width: 75%;
+  height: 2px;
+  background: #ccc;
+  position: relative;
+  float: left;
+  margin: 10px 0 0 10px;
+}
+* #playerControler .vPlayVolumeWrap #vPlayVolume #dragBar,
+html #playerControler .vPlayVolumeWrap #vPlayVolume #dragBar,
+body #playerControler .vPlayVolumeWrap #vPlayVolume #dragBar,
+video #playerControler .vPlayVolumeWrap #vPlayVolume #dragBar {
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+  background: #369;
+  position: absolute;
+  top: -3px;
+  left: 0;
+  cursor: pointer;
+}
+* #playerControler .vPlayVolumeWrap #vPlayVolume #dragMask,
+html #playerControler .vPlayVolumeWrap #vPlayVolume #dragMask,
+body #playerControler .vPlayVolumeWrap #vPlayVolume #dragMask,
+video #playerControler .vPlayVolumeWrap #vPlayVolume #dragMask {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: #369;
+  width: 0;
+  height: 2px;
+}
 * #progressBar,
 html #progressBar,
 body #progressBar,
