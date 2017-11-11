@@ -1,6 +1,3 @@
-body {
-  background: #ee82ee;
-}
 *,
 html,
 body,
@@ -13,9 +10,9 @@ html #vPlayer,
 body #vPlayer,
 video #vPlayer {
   width: 100%;
+  background: #000;
   position: relative;
   overflow: hidden;
-  background: #000;
 }
 * #playerContent,
 html #playerContent,
@@ -23,19 +20,28 @@ body #playerContent,
 video #playerContent {
   width: 100%;
   background: #000;
+  display: block;
 }
 * #playerControler,
 html #playerControler,
 body #playerControler,
 video #playerControler {
   width: 100%;
-  background: #333;
   z-index: 99999999;
   position: absolute;
-  bottom: 5px;
+  bottom: 2px;
   left: 0;
   padding: 4px 0;
   opacity: 1;
+}
+* #playerControler:after,
+html #playerControler:after,
+body #playerControler:after,
+video #playerControler:after {
+  content: '';
+  display: block;
+  height: 0;
+  clear: both;
 }
 * #playerControler .playButtonWrap,
 html #playerControler .playButtonWrap,
@@ -46,6 +52,7 @@ video #playerControler .playButtonWrap {
   border-radius: 14px;
   border: 2px #ccc solid;
   margin-left: 8px;
+  float: left;
 }
 * #playerControler .playButtonWrap .playButton,
 html #playerControler .playButtonWrap .playButton,
@@ -69,6 +76,16 @@ video #playerControler .playButtonWrap .pauseButton {
   border-right: 2px #ccc solid;
   display: none;
 }
+* #playerControler #vplayerTimeLine,
+html #playerControler #vplayerTimeLine,
+body #playerControler #vplayerTimeLine,
+video #playerControler #vplayerTimeLine {
+  color: #ccc;
+  line-height: 30px;
+  font-size: 12px;
+  float: left;
+  margin-left: 2%;
+}
 * #progressBar,
 html #progressBar,
 body #progressBar,
@@ -79,7 +96,6 @@ video #progressBar {
   position: absolute;
   bottom: 0;
   display: block;
-  border-bottom: 3px #aaa solid;
 }
 * #progressBar .reloadProgress,
 html #progressBar .reloadProgress,

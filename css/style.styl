@@ -1,34 +1,38 @@
-body{
-  background violet
-}
 *,html,body,video{
   margin 0
   padding 0
   #vPlayer{
     width 100%
+    background #000
     position relative
     overflow hidden
-    background #000
   }
   #playerContent{
     width 100%
     background #000
+    display block
   }
   #playerControler{
     width 100%
-    background #333
     z-index 99999999
     position absolute
-    bottom 5px
+    bottom 2px
     left 0
     padding 4px 0
     opacity 1
+    &:after{
+      content ''
+      display block
+      height 0
+      clear both
+    }
     .playButtonWrap{
       width 24px
       height 24px
       border-radius 14px
       border 2px #CCC solid
       margin-left 8px
+      float left
       .playButton{
         margin 4px 0 0 8px
         width 0
@@ -47,6 +51,13 @@ body{
         display none
       }
     }
+    #vplayerTimeLine{
+      color #CCC
+      line-height 30px
+      font-size 12px
+      float left
+      margin-left 2%
+    }
   }
   #progressBar{
     width 100%
@@ -55,7 +66,7 @@ body{
     position absolute
     bottom 0
     display block
-    border-bottom 3px #AAA solid
+    //border-bottom 3px #333 solid
     .reloadProgress{
       width 0
       height 2px

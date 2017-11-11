@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <title>vPlayer</title>
     <link rel="stylesheet" href="css/style.css">
 
@@ -9,7 +10,7 @@
 <body>
     <div id="vPlayer">
         <video id="playerContent" preload="auto">
-            <source src="http://media.w3.org/2010/05/sintel/trailer.webm" type='video/webm;codecs="vp8, vorbis"'/>
+            <!--<source src="http://media.w3.org/2010/05/sintel/trailer.webm" type='video/webm;codecs="vp8, vorbis"'/>-->
             <source src="http://media.w3.org/2010/05/bunny/trailer.mp4" type='video/mp4;codecs="avc1.42E01E, mp4a.40.2"'/>
         </video>
         <div id="playerControler">
@@ -17,6 +18,7 @@
                 <div id="play" class="playButton"></div>
                 <div id="pause" class="pauseButton"></div>
             </div>
+            <div id="vplayerTimeLine"></div>
         </div>
         <div id="progressBar">
             <div class="reloadProgress">
