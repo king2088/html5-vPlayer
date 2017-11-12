@@ -12,7 +12,17 @@ window.onload = function () {
     var dragBarDOM = document.getElementById('dragBar')
     var dragMaskDOM = document.getElementById('dragMask')
     var fullscreen = document.getElementById('fullScreen')
+    var vPlayerErrorDOM = document.getElementById('vPlayerError')
     var _playerControlHidden,_playTime
+
+    //click vPlayer element play or pause video
+    playerContent.onclick = function(){
+        if(!playerContent.paused){
+            vPlayerPause()
+        }else{
+            vPlayerPlay()
+        }
+    }
 
     var isSupportTouch = 'ontouchend' in document ? true : false;
     // console.log('isSupportTouc',isSupportTouch)
@@ -108,7 +118,7 @@ window.onload = function () {
         },1)
     }
 
-    //volume drag control
+    //init volume drag control to 50%
     playerContent.volume = 0.5
     dragMaskDOM.style.width = '50%'
     dragBarDOM.style.left = '50%'
@@ -117,6 +127,7 @@ window.onload = function () {
         dragBarDOM.onmousedown = function (event) {
             drag(event, this)
         }
+
     }else {
         dragBarDOM.ontouchstart = function (event) {
             console.log(event)
@@ -134,7 +145,7 @@ window.onload = function () {
         var lengthX
         if(!isSupportTouch){
             lengthX = event.clientX - ele.offsetLeft;
-        }else {
+        }else{
             lengthX = event.touches[0].clientX - ele.offsetLeft;
         }
 
@@ -206,7 +217,28 @@ window.onload = function () {
             playerContent.requestFullscreen()
         }
     }
-    console.log('networkState',playerContent.networkState)
+    // console.log('networkState',playerContent.networkState)
+
+    playerContent.addEventListener('error',vPlayerError)
+    
+    //error case
+    function vPlayerError(){
+        var error = playerContent.error
+        switch (error.code) {
+            case 1:
+                vPlayerErrorDOM.innerText = 'MEDIA ERR ABORTED'
+            break
+            case 2:
+                vPlayerErrorDOM.innerText = 'MEDIA ERR NETWORK'
+            break
+            case 3:
+                vPlayerErrorDOM.innerText = 'MEDIA ERR DECODE'
+            break
+            case 4:
+                vPlayerErrorDOM.innerText = 'MEDIA ERR SRC NOT SUPPORTED'
+            break
+        }
+    }
 
     /**
      * format second to hh:mm:ss

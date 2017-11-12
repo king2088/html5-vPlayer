@@ -1,184 +1,198 @@
 *,html,body,video{
   margin 0
   padding 0
-  #vPlayer{
-    width 100%
-    background #000
-    position relative
-    overflow hidden
-  }
-  #playerContent{
-    width 100%
-    background #000
+}
+#vPlayer{
+  width 100%
+  background #000
+  position relative
+  overflow hidden
+}
+#playerContent{
+  width 100%
+  background #000
+  display block
+}
+#playerControler{
+  width 100%
+  z-index 99999999
+  position absolute
+  bottom 2px
+  left 0
+  padding 4px 0
+  opacity 1
+  &after{
+    content ''
     display block
+    height 0
+    clear both
   }
-  #playerControler{
-    width 100%
-    z-index 99999999
-    position absolute
-    bottom 2px
-    left 0
-    padding 4px 0
-    opacity 1
-    &:after{
-      content ''
-      display block
-      height 0
-      clear both
-    }
-    .playButtonWrap{
-      width 24px
-      height 24px
-      border-radius 14px
-      border 2px #CCC solid
-      margin-left 8px
-      float left
-      .playButton{
-        margin 4px 0 0 8px
-        width 0
-        height 0
-        border-bottom 8px solid transparent
-        border-top 8px solid transparent
-        border-left 10px solid #CCC
-        //display none
-      }
-      .pauseButton{
-        margin 6px 0 0 8px
-        width 5px
-        height 12px
-        border-left 2px #CCC solid
-        border-right 2px #CCC solid
-        display none
-      }
-    }
-    #vplayerTimeLine{
-      color #CCC
-      line-height 30px
-      font-size 12px
-      float left
-      margin-left 2%
-    }
-    .vPlayVolumeWrap{
-      float right
-      margin 6px 10% 0 0
-      width 25%
-      #volumeIcon{
-        width: 0px;
-        height: 0px;
-        padding: 5px 3px;
-        border-width: 5px 10px 5px 0px;
-        border-color: transparent #CCC transparent transparent;
-        border-style: solid;
-        /*喇叭效果*/
-        -webkit-box-shadow: inset 15px 0 #666;
-        -moz-box-shadow: inset 15px 0 #666;
-        box-shadow: inset 15px 0 #666;
-        float left
-        display inline-block
-      }
-      #vPlayVolume{
-        width: 70%;
-        height: 2px;
-        background: #ccc;
-        position: relative;
-        float left
-        margin 10px 0 0 10px
-        display inline-block
-        #dragBar{
-          width: 8px;
-          height: 8px;
-          border-radius 4px
-          background: #369;
-          position: absolute;
-          top: -3px;
-          left: 0;
-          cursor: pointer;
-        }
-        #dragMask{
-          position: absolute;
-          left: 0;
-          top: 0;
-          background: #369;
-          width: 0;
-          height: 2px;
-        }
-      }
-    }
-    #fullScreen{
-      width 24px
-      height 24px
-      float right
-      margin 5px 2% 0 0
-      display block
-      background url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAA/UlEQVRIS91V2w3CMAy8qP0HNoAJoOrtQ9mgI8AEiAlgBAZxJEaADWCBGqUqUktbkSAVAfmMH+ezk7PBwMcMnB+fB7DW5kVRLI0xixq7K8lJna2IXAGMandnVT3GcbxJksTZytNg4JKr6rajbTeS4xcAD/OOZN4JICInAHNjzCpN00PIfGrFnUnO+gDUGUi+NRsRacU3EnU5hLD4CoBy+s8D9WVRvaxG/Fu99gVsPdOQQF/fP2NQDUmfZcG3HV3x//cPBpeKUuwA5CR3vr13ftbaTFX3AC4kp6Fy7bMPXst1VYnbCVnF5BHksw8uAI5RFK17F05IS3x9f/8n3wFQDZcZDw/gGQAAAABJRU5ErkJggg==") no-repeat center;
-    }
-
-
-  }
-  #progressBar{
-    width 100%
-    background #333
-    height 2px
-    position absolute
-    bottom 0
-    display block
-    //border-bottom 3px #333 solid
-    .reloadProgress{
+  .playButtonWrap{
+    width 24px
+    height 24px
+    border-radius 14px
+    border 2px #CCC solid
+    margin-left 8px
+    float left
+    .playButton{
+      margin 4px 0 0 8px
       width 0
+      height 0
+      border-bottom 8px solid transparent
+      border-top 8px solid transparent
+      border-left 10px solid #CCC
+      //display none
+    }
+    .pauseButton{
+      margin 6px 0 0 8px
+      width 5px
+      height 12px
+      border-left 2px #CCC solid
+      border-right 2px #CCC solid
+      display none
+    }
+  }
+  #vplayerTimeLine{
+    color #CCC
+    line-height 30px
+    font-size 12px
+    float left
+    margin-left 2%
+  }
+  .vPlayVolumeWrap{
+    float right
+    margin 6px 10% 0 0
+    width 25%
+    #volumeIcon{
+      width 0px
+      height 0px
+      padding 5px 3px
+      border-width 5px 10px 5px 0px
+      border-color transparent #CCC transparent transparent
+      border-style solid
+      /*喇叭效果*/
+      -webkit-box-shadow inset 15px 0 #666
+      -moz-box-shadow inset 15px 0 #666
+      box-shadow inset 15px 0 #666
+      float left
+      display inline-block
+    }
+    #vPlayVolume{
+      width 70%
       height 2px
-      background #CCC
+      background #ccc
       position relative
-      left 0
-      top 0
-      z-index 999
-      .progress{
-        width 0
-        height 2px
-        background darkcyan
+      float left
+      margin 10px 0 0 10px
+      display inline-block
+      #dragBar{
+        width 8px
+        height 8px
+        border-radius 4px
+        background #369
+        position absolute
+        top -3px
+        left 0
+        cursor pointer
+      }
+      #dragMask{
         position absolute
         left 0
         top 0
-        z-index 9999
+        background #369
+        width 0
+        height 2px
       }
     }
   }
+  #fullScreen{
+    width 24px
+    height 24px
+    float right
+    margin 5px 2% 0 0
+    display block
+    background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAA/UlEQVRIS91V2w3CMAy8qP0HNoAJoOrtQ9mgI8AEiAlgBAZxJEaADWCBGqUqUktbkSAVAfmMH+ezk7PBwMcMnB+fB7DW5kVRLI0xixq7K8lJna2IXAGMandnVT3GcbxJksTZytNg4JKr6rajbTeS4xcAD/OOZN4JICInAHNjzCpN00PIfGrFnUnO+gDUGUi+NRsRacU3EnU5hLD4CoBy+s8D9WVRvaxG/Fu99gVsPdOQQF/fP2NQDUmfZcG3HV3x//cPBpeKUuwA5CR3vr13ftbaTFX3AC4kp6Fy7bMPXst1VYnbCVnF5BHksw8uAI5RFK17F05IS3x9f/8n3wFQDZcZDw/gGQAAAABJRU5ErkJggg==') no-repeat center
+  }
+
+}
+#vPlayerError{
+  position absolute
+  top 50%
+  left 50%
+  transform translate(-50%, -50%)
+  background rgba(0,0,0,.3)
+  color #FFF
+  display block
+  text-align center
+  padding 5px 8px
+  border-radius 4px
+  display none
+}
+#progressBar{
+  width 100%
+  background #333
+  height 2px
+  position absolute
+  bottom 0
+  display block
+  //border-bottom 3px #333 solid
+  .reloadProgress{
+    width 0
+    height 2px
+    background #CCC
+    position relative
+    left 0
+    top 0
+    z-index 999
+    .progress{
+      width 0
+      height 2px
+      background darkcyan
+      position absolute
+      left 0
+      top 0
+      z-index 9999
+    }
+  }
+  
+  
   @keyframes fadeIn {
     from {
-      opacity: 0;
+      opacity 0
     }
 
     to {
-      opacity: 1;
+      opacity 1
     }
   }
 
   .fadeIn {
-    animation-name: fadeIn;
+    animation-name fadeIn
   }
 
   @keyframes fadeOut {
     from {
-      opacity: 1;
+      opacity 1
     }
 
     to {
-        opacity: 0;
+        opacity 0
     }
   }
   .fadeOut {
-    animation-name: fadeOut;
+    animation-name fadeOut
   }
 
 }
-video::-webkit-media-controls, video::-moz-media-controls,
-video::-webkit-media-controls-enclosure{
-  display:none !important;
+video-webkit-media-controls, video-moz-media-controls,
+video-webkit-media-controls-enclosure{
+  displaynone !important
 }
 
-video::-webkit-media-controls-panel,
-video::-webkit-media-controls-panel-container,
-video::-webkit-media-controls-start-playback-button {
-  display:none !important;
-  -webkit-appearance: none;
+video-webkit-media-controls-panel,
+video-webkit-media-controls-panel-container,
+video-webkit-media-controls-start-playback-button {
+  displaynone !important
+  -webkit-appearance none
 }
 
