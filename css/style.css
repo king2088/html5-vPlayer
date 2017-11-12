@@ -109,17 +109,19 @@ video #playerControler .vPlayVolumeWrap #volumeIcon {
   -moz-box-shadow: inset 15px 0 #666;
   box-shadow: inset 15px 0 #666;
   float: left;
+  display: inline-block;
 }
 * #playerControler .vPlayVolumeWrap #vPlayVolume,
 html #playerControler .vPlayVolumeWrap #vPlayVolume,
 body #playerControler .vPlayVolumeWrap #vPlayVolume,
 video #playerControler .vPlayVolumeWrap #vPlayVolume {
-  width: 75%;
+  width: 70%;
   height: 2px;
   background: #ccc;
   position: relative;
   float: left;
   margin: 10px 0 0 10px;
+  display: inline-block;
 }
 * #playerControler .vPlayVolumeWrap #vPlayVolume #dragBar,
 html #playerControler .vPlayVolumeWrap #vPlayVolume #dragBar,
@@ -144,6 +146,17 @@ video #playerControler .vPlayVolumeWrap #vPlayVolume #dragMask {
   background: #369;
   width: 0;
   height: 2px;
+}
+* #playerControler #fullScreen,
+html #playerControler #fullScreen,
+body #playerControler #fullScreen,
+video #playerControler #fullScreen {
+  width: 24px;
+  height: 24px;
+  float: right;
+  margin: 5px 2% 0 0;
+  display: block;
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAA/UlEQVRIS91V2w3CMAy8qP0HNoAJoOrtQ9mgI8AEiAlgBAZxJEaADWCBGqUqUktbkSAVAfmMH+ezk7PBwMcMnB+fB7DW5kVRLI0xixq7K8lJna2IXAGMandnVT3GcbxJksTZytNg4JKr6rajbTeS4xcAD/OOZN4JICInAHNjzCpN00PIfGrFnUnO+gDUGUi+NRsRacU3EnU5hLD4CoBy+s8D9WVRvaxG/Fu99gVsPdOQQF/fP2NQDUmfZcG3HV3x//cPBpeKUuwA5CR3vr13ftbaTFX3AC4kp6Fy7bMPXst1VYnbCVnF5BHksw8uAI5RFK17F05IS3x9f/8n3wFQDZcZDw/gGQAAAABJRU5ErkJggg==") no-repeat center;
 }
 * #progressBar,
 html #progressBar,
@@ -255,4 +268,15 @@ video .fadeOut {
   to {
     opacity: 0;
   }
+}
+video::-webkit-media-controls,
+video::-moz-media-controls,
+video::-webkit-media-controls-enclosure {
+  display: none !important;
+}
+video::-webkit-media-controls-panel,
+video::-webkit-media-controls-panel-container,
+video::-webkit-media-controls-start-playback-button {
+  display: none !important;
+  -webkit-appearance: none;
 }

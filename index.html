@@ -9,9 +9,9 @@
 </head>
 <body>
     <div id="vPlayer">
-        <video id="playerContent" preload="auto">
+        <video id="playerContent">
             <!--<source src="http://media.w3.org/2010/05/sintel/trailer.webm" type='video/webm;codecs="vp8, vorbis"'/>-->
-            <source src="http://www.google.cn/adsense/start/videos/home-hero.mp4" type='video/mp4;codecs="avc1.42E01E, mp4a.40.2"'/>
+            <source src="http://media.w3.org/2010/05/bunny/movie.mp4" type='video/mp4;codecs="avc1.42E01E, mp4a.40.2"'/>
         </video>
         <div id="playerControler">
             <div class="playButtonWrap">
@@ -19,6 +19,7 @@
                 <div id="pause" class="pauseButton"></div>
             </div>
             <div id="vplayerTimeLine"></div>
+            <div id="fullScreen"></div>
             <div class="vPlayVolumeWrap">
                 <div id="volumeIcon"></div>
                 <div id="vPlayVolume">
@@ -32,7 +33,6 @@
             <div class="reloadProgress">
                 <div class="progress"></div>
             </div>
-
         </div>
     </div>
     <script src="js/man.js"></script>
