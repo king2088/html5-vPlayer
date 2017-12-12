@@ -2,6 +2,10 @@
   margin 0
   padding 0
 }
+// hidden webkit browser vodie fullscreen controls
+video::-webkit-media-controls-enclosure {
+  display: none !important;
+}
 #vPlayer{
   width 100%
   background #000
@@ -15,7 +19,7 @@
 }
 #playerControler{
   width 100%
-  z-index 99999999
+  z-index 2147483649
   position absolute
   bottom 2px
   left 0
@@ -41,7 +45,7 @@
       border-bottom 8px solid transparent
       border-top 8px solid transparent
       border-left 10px solid #CCC
-      //display none
+    //display none
     }
     .pauseButton{
       margin 6px 0 0 8px
@@ -135,7 +139,7 @@
   position absolute
   bottom 0
   display block
-  //border-bottom 3px #333 solid
+//border-bottom 3px #333 solid
   .reloadProgress{
     width 0
     height 2px
@@ -154,8 +158,8 @@
       z-index 9999
     }
   }
-  
-  
+
+
   @keyframes fadeIn {
     from {
       opacity 0
@@ -176,7 +180,7 @@
     }
 
     to {
-        opacity 0
+      opacity 0
     }
   }
   .fadeOut {
@@ -184,15 +188,5 @@
   }
 
 }
-video-webkit-media-controls, video-moz-media-controls,
-video-webkit-media-controls-enclosure{
-  displaynone !important
-}
 
-video-webkit-media-controls-panel,
-video-webkit-media-controls-panel-container,
-video-webkit-media-controls-start-playback-button {
-  displaynone !important
-  -webkit-appearance none
-}
 

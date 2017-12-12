@@ -102,7 +102,7 @@ window.onload = function () {
             //reload progress time (加载的时间/总时间)*100 = 加载的百分比
             var reloadProgressTime = (playerContent.buffered.end(0) / playerContent.duration) * 100
             reloadProgressDOM.children[0].style.width = reloadProgressTime + '%'
-
+            console.log('reloadProgressTime',reloadProgressTime)
             //progress time = (playerContent.currentTime/playerContent.duration)*100
             var progressTime = playerContent.currentTime
             reloadProgressDOM.children[0].children[0].style.width = (progressTime / playerContent.duration) * 100 + '%'
@@ -209,6 +209,7 @@ window.onload = function () {
 
     //video fullscreen
     fullscreen.onclick = function () {
+        playerContent.removeAttribute('controls')
         if(playerContent.webkitRequestFullScreen){
             playerContent.webkitRequestFullScreen()
         }else if(playerContent.mozRequestFullScreen){

@@ -5,6 +5,9 @@ video {
   margin: 0;
   padding: 0;
 }
+video::-webkit-media-controls-enclosure {
+  display: none !important;
+}
 #vPlayer {
   width: 100%;
   background: #000;
@@ -18,7 +21,7 @@ video {
 }
 #playerControler {
   width: 100%;
-  z-index: 99999999;
+  z-index: 2147483649;
   position: absolute;
   bottom: 2px;
   left: 0;
@@ -224,15 +227,4 @@ video {
   to {
     opacity: 0;
   }
-}
-video-webkit-media-controls,
-video-moz-media-controls,
-video-webkit-media-controls-enclosure {
-  displaynone: !important;
-}
-video-webkit-media-controls-panel,
-video-webkit-media-controls-panel-container,
-video-webkit-media-controls-start-playback-button {
-  displaynone: !important;
-  -webkit-appearance: none;
 }
